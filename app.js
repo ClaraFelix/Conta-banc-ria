@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var contaInvestimento_1 = require("./contaInvestimento");
+var contaCorrente_1 = require("./contaCorrente");
+var contaA = new contaCorrente_1.ContaCorrente();
+contaA.depositar(100);
+contaA.sacar(50);
+var saldo = contaA.calcularSaldo();
+console.log(saldo);
+var contaB = new contaInvestimento_1.ContaInvestimento();
+contaB.depositar(200);
+contaB.sacar(100);
+var saldo2 = contaB.calcularSaldo();
+console.log(saldo2);
+var transf = contaB;
+contaB.transferir(20, contaA);
+console.log(transf);
